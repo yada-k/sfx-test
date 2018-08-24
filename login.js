@@ -4,7 +4,7 @@ var casper = require('casper').create();
 casper.start();
 
 // URLを開く
-casper.open("http://uat.admin.system-fusion.ca-cloud.com/");
+casper.open("URL");
 
 // 初期表示状態のキャプチャ
 casper.wait(10000, function() {
@@ -23,11 +23,10 @@ casper.then(function() {
         password: '111111',
     },
     true)
-    // 入力状態のキャプチャ
-    casper.wait(10000, function() {
-        this.capture('login_input_email.png');
-    });
+    // ログイン実行
+    this.click('#app > div > div > div > form > div > div > div.btn-group.col-xs-12.mb10.pt10 > button');
 
+    
 })
 
 casper.run();
